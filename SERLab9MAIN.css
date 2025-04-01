@@ -1,0 +1,109 @@
+	header {
+	  padding: 20px;
+	  margin: 0 auto;
+	  text-align: center;
+	  font-size: 20px;
+	  transition: background-color 0.3s ease; 
+	}
+
+	header:hover {
+	  background-color: rgba(64, 79, 84, .5); 
+	}
+
+	
+	
+	body {
+      font-family: Arial, sans-serif;
+	  background-image: url('fighter_background.gif'); 
+	  background-size: cover; 
+	  background-repeat: no-repeat; 
+	  padding: 20px;
+	  margin: 0 auto;
+	  text-align: center;
+	  
+    }
+	
+
+#table1 {
+	width: 80%;
+    margin: 0 auto;
+	padding: 20px;
+    border: 2px solid black;
+	background-color: rgba(64, 79, 84, .5);
+}
+
+#table1 th {
+    border: 3px solid black;
+	border-collapse: collapse 3px;
+    padding: 10px;
+    text-align: center;
+	font-size: 50;
+	font-style: bold;
+	background-color: rgba(128, 0, 0, 0.5);	
+}
+#table1 td {
+    border: 3px solid black;
+	border-collapse: collapse 3px;
+    padding: 10px;
+    text-align: center;
+	font-size: 50;
+	font-style: bold;
+	background-color: rgba(128, 0, 0, 0.5);
+}
+
+#table1 img {
+    display: block;
+    width: 100%; 
+    height: auto; 
+}
+
+#table2 {
+	width: 80%;
+	height: 80%;
+    margin: 0 auto;
+	padding: 20px;
+    border: 2px solid black;
+	background-color: rgba(64, 79, 84, .5);
+}
+
+#table2 th {
+    border: 3px solid black;
+	border-collapse: collapse 3px;
+    padding: 10px;
+    text-align: center;
+	font-size: 50;
+	font-style: bold;
+	background-color: rgba(128, 0, 0, 0.5);	
+}
+
+#table2 td {
+    border: 3px solid black;
+	border-collapse: collapse 3px;
+    padding: 10px;
+    text-align: center;
+	font-size: 50;
+	font-style: bold;
+	background-color: rgba(128, 0, 0, 0.5);
+	width: 600px;
+	height: 600px;
+}
+
+#table2 img {
+    display: center;
+    width: auto; 
+    height: 600px; 
+}
+
+#weightClassForm {
+	width: 80%;
+	height: 300px;
+    margin: 0 auto;
+	padding: 20px;
+    border: 2px solid black;
+	background-color: rgba(64, 79, 84, .5);	
+	font-size: 20px;
+}
+
+.highlight-on-hover:hover {
+    filter: brightness(300%);
+}

@@ -1,0 +1,311 @@
+<!-- 
+Name: Sully Erkan-Rijos
+
+Lab: 9
+ 
+Description:
+This program / website is a tribute to boxing mostly but its at heart, a tribute to any martial art.
+It incorporates Javascript, CSS, and HTML to provide information and videos upon clicking on fighters pics or titles.
+Theres also a form to figure out your fighting class.
+-->
+
+<html lang="en-US">
+
+
+ <head>
+ 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+	<link href="SERLab9MAIN.css" text="text/css" rel="stylesheet">
+	
+	<title> SULLY ERKAN-RIJOS - LAB 9 - FINAL PROJECT LAB </title>
+	
+	
+	<script>
+
+		<!-- JS VARIABLES ----------------- SLIDESHOW ----------------------->
+		<!-- JS VARIABLES ---------------------------------------->  
+		var imgArray = new Array(4);
+
+		var index1 = 0;
+
+		<!-- JS VARIABLES ---------------------------------------->
+
+		function startup() <!-- Assigns & Loads all 4 index variables w image, then calls: cycle(), select()-->
+		{
+		  imgArray[0] = new Image;
+		  imgArray[0].src = "canelo_alverez_knockout.jpg";
+		  imgArray[1] = new Image;
+		  imgArray[1].src = "mike_tyson_knockout.jpg";
+		  imgArray[2] = new Image;
+		  imgArray[2].src = "rodtang_jitmuangnon_knockout.jpg";
+		  imgArray[3] = new Image;
+		  imgArray[3].src = "floyd_mayweather_knockout.jpg";
+		  imgArray[4] = new Image;
+		  imgArray[4].src = "random_knockout.jpg";
+
+		  return;
+		} 
+
+
+		function orderedSlideShow() //ORDERED
+		{
+		  document.banner1.src = imgArray[index1].src; <!--increases index1, 1 unit per 2 seconds to change -->
+		  index1++;
+		  if (index1 > 4)
+		  {
+			index1 = 0;
+		  }
+		  setTimeout(orderedSlideShow, 2000);
+		  return;
+		}
+
+
+window.onload = function() {
+    startup();
+    orderedSlideShow();
+};
+
+<!-- JS VARIABLES ----------------- WEIGHT FORM ----------------------->				
+	<!-- JS VARIABLES ---------------------------------------->
+
+		var menWeightDivisionArray = new Array(17);
+		var womenWeightDivisionArray = new Array(17);
+				
+	<!-- JS VARIABLES ---------------------------------------->
+	
+function menWeightDivision() {
+    imgArray[0] = "minimumweight, 105 pounds (48 kg)";
+    imgArray[1] = "light flyweight, 108 pounds (49 kg)";
+    imgArray[2] = "flyweight, 112 pounds (51 kg)";
+    imgArray[3] = "super flyweight, 115 pounds (52 kg)";
+    imgArray[4] = "bantamweight, 118 pounds (53.5 kg)";
+    imgArray[5] = "super bantamweight, 122 pounds (55 kg)";
+    imgArray[6] = "featherweight, 126 pounds (57 kg)";
+    imgArray[7] = "super featherweight, 130 pounds (59 kg)";
+    imgArray[8] = "lightweight, 135 pounds (61 kg)";
+    imgArray[9] = "super lightweight, 140 pounds (63.5 kg)";
+    imgArray[10] = "welterweight, 147 pounds (67 kg)";
+    imgArray[11] = "super welterweight, 154 pounds (70 kg)";
+    imgArray[12] = "middleweight, 160 pounds (72.5 kg)";
+    imgArray[13] = "super middleweight, 168 pounds (76 kg)";
+    imgArray[14] = "light heavyweight, 175 pounds (79 kg)";
+    imgArray[15] = "cruiserweight, 200 pounds (91 kg)";
+    imgArray[16] = "heavyweight, unlimited";
+	
+	return;
+}
+
+function womenWeightDivision() {
+    imgArray[0] = "flyweight, not more than 106 pounds (48 kg)";
+    imgArray[1] = "bantamweight, 112 pounds (51 kg)";
+    imgArray[2] = "featherweight, 119 pounds (54 kg)";
+    imgArray[3] = "lightweight, 126 pounds (57 kg)";
+    imgArray[4] = "light welterweight, 132 pounds (60 kg)";
+    imgArray[5] = "welterweight, 141 pounds (64 kg)";
+    imgArray[6] = "middleweight, 152 pounds (69 kg)";
+    imgArray[7] = "light heavyweight, 165 pounds (75 kg)";
+    imgArray[8] = "heavyweight, 179 pounds (81 kg)";
+    imgArray[9] = "super heavyweight, any weight over 179 pounds (81 kg)";
+	
+	return;
+}
+
+
+function classAssigner() {
+
+    var weightInput = document.getElementById("weightInput").value.trim();
+    var genderInput = document.getElementById("genderSelect").value;
+    var weightClass;
+	
+	    if (weightInput === "") {
+        document.getElementById("weightInput").value = "Please enter a valid number";
+        return; // Exit the function if no value is entered
+    }
+	
+	weightInput = parseFloat(weightInput);
+
+    if (genderInput === "Male") {
+	
+        if (weightInput < 104) {
+            weightClass = "Please enter a valid weight";
+        } else if (weightInput < 106) {
+            weightClass = "Minimumweight";
+        } else if (weightInput < 108) {
+            weightClass = "Light Flyweight";
+        } else if (weightInput < 112) {
+            weightClass = "Flyweight";
+        } else if (weightInput < 115) {
+            weightClass = "Super Flyweight";
+        } else if (weightInput < 118) {
+            weightClass = "Bantamweight";
+        } else if (weightInput < 122) {
+            weightClass = "Super Bantamweight";
+        } else if (weightInput < 126) {
+            weightClass = "Featherweight";
+        } else if (weightInput < 130) {
+            weightClass = "Super Featherweight";
+        } else if (weightInput < 135) {
+            weightClass = "Lightweight";
+        } else if (weightInput < 140) {
+            weightClass = "Super Lightweight";
+        } else if (weightInput < 147) {
+            weightClass = "Welterweight";
+        } else if (weightInput < 154) {
+            weightClass = "Super Welterweight";
+        } else if (weightInput < 160) {
+            weightClass = "Middleweight";
+        } else if (weightInput < 168) {
+            weightClass = "Super Middleweight";
+        } else if (weightInput < 175) {
+            weightClass = "Light Heavyweight";
+        } else if (weightInput < 200) {
+            weightClass = "Cruiserweight";
+        } else {
+            weightClass = "Heavyweight";
+        }
+		
+    } else if (genderInput === "Female") {
+	
+        if (weightInput < 99) {
+            weightClass = "Please enter a valid weight";
+        } else if (weightInput <= 106) {
+            weightClass = "Flyweight";
+        } else if (weightInput <= 112) {
+            weightClass = "Bantamweight";
+        } else if (weightInput <= 119) {
+            weightClass = "Featherweight";
+        } else if (weightInput <= 126) {
+            weightClass = "Lightweight";
+        } else if (weightInput <= 132) {
+            weightClass = "Light Welterweight";
+        } else if (weightInput <= 141) {
+            weightClass = "Welterweight";
+        } else if (weightInput <= 152) {
+            weightClass = "Middleweight";
+        } else if (weightInput <= 165) {
+            weightClass = "Light Heavyweight";
+        } else if (weightInput <= 179) {
+            weightClass = "Heavyweight";
+        } else {
+            weightClass = "Super Heavyweight";
+        }
+    }
+
+    document.getElementById("result").innerText = "Your weight class is: " + weightClass;
+}				
+<!-- JS VARIABLES ----------------- WEIGHT FORM ----------------------->
+
+
+<!-- JS VARIABLES ----------------- video pop up ----------------------->
+
+function openVideoPopup(videoUrl) {
+    window.open(videoUrl, "VideoPopup", "width=800,height=600");
+}
+<!-- JS VARIABLES ----------------- video pop up ----------------------->
+	  </script>
+ 
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+  <header>
+  
+    <h1 style="color: red;"> The Beauty and Pragmatism of Martial Arts </h1>
+              
+	<p style="color: red;"> Sully Erkan-Rijos --- CST 131 --- Lab:9 </p>
+  
+  </header>
+  
+  
+  
+  
+  
+  <table id="table1">
+	<th colspan="2"> Star FIGHTERS </th>
+	
+	<tr>
+		<td> <a href="https://en.wikipedia.org/wiki/Mike_Tyson" title="Click for more info on Mike"> Mike Tyson </a> </td>
+		<td> <a href="https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez" title="Click for more info on Canelo"> Canelo Alverez </a> </td>
+	</tr>
+	
+    <tr>
+        <td>    <a href="#" onclick="openVideoPopup('https://www.youtube.com/embed/vwhx85n0P7A')">
+				<img src="mike_tyson_standing.jpg" alt="Mike Tyson" title="Click for VIDEO" class="highlight-on-hover">  </a> 
+		</td>
+		
+		
+        <td>  	<a href=" # " onclick="openVideoPopup('https://www.youtube.com/embed/Rjfvl9Vhmu0?si=_Smc1T6ML8v5f8wV')"> 
+				<img src="canelo_alverez_standing.jpg" alt="Canelo Alverez" title="Click for VIDEO " class="highlight-on-hover"> </a> 
+		</td>
+    </tr>
+	
+	<tr>
+		<td> <a href="https://en.wikipedia.org/wiki/Rodtang_Jitmuangnon" title="Click for more info on Rodtang"> Rodtang Jitmuangnon </a> </td>
+		<td> <a href="https://en.wikipedia.org/wiki/Floyd_Mayweather_Jr." title="Click for more info on Floyd"> Floyd Mayweather </a> </td>
+	</tr>
+	
+    <tr>
+        <td> 	<a href=" # " onclick="openVideoPopup('https://www.youtube.com/embed/FxCqa3nb6XM?si=eBvL5SLsrDNc7J3R')"> 
+				<img src="rodtang_jitmuangnon_standing.jpg" alt="Rodtang Jitmuangnon" title="Click for VIDEO" class="highlight-on-hover"> </a>
+		</td>
+		
+				<td> <a href=" # " onclick="openVideoPopup('https://www.youtube.com/embed/19yaKccCM-o?si=rxq29ZleSP_e3qOM')"> 
+				<img src="floyd_mayweather_standing.jpg" alt="Floyd Mayweather" title="Click for VIDEO " class="highlight-on-hover">
+		</td>
+    </tr>
+</table>
+
+
+<br>
+
+	
+	<table id="table2">
+		<tr>
+			<th colspan="2">
+				<p>Fighter's Knockouts</p>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<img name="banner1" src="boxing_ring_background">
+			</td>
+		</tr>
+	</table> <!-- table2 -->
+	
+	
+<br>	
+
+	
+	<div id="weightClassForm">
+
+		<h2> Determine your boxing weight class ! </h2>
+		
+		<label for="genderSelect"> Select your Gender: </label>
+		<select id="genderSelect"> 
+			<option value="Male"> Male </option>
+			<option value="Female"> Female </option>
+		</select>
+		
+		<input type="text" id="weightInput" placeholder="Enter your weight in Lbs">		
+		
+	<div id="submission"></div>
+	
+<br><br>
+		  
+		  <button id="enterInfoBtn" style="height: 50px; width: 150px; font-size: 20px;" onclick="classAssigner()">Enter</button>
+
+		  
+<br><br>
+
+	<div id="result" font-size: 20px;>
+		
+	</div> <!-- weightClassForm -->
+	
+ </body>
+ 
+ 
+ </html>
